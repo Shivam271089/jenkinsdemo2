@@ -22,9 +22,7 @@ pipeline {
 
     
     stage('Deploy CloudHub') {
-     environment {
-        anypoint = credentials('ANYPOINT_CREDENTIALS')
-      }
+     
       steps {
  
       echo "*************CloudHub Deployment start**************"

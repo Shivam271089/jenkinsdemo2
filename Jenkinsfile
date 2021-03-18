@@ -9,7 +9,7 @@ pipeline {
   	string(name:'workerType')
   	string(name:'workers')
   	string(name:'workerType')
-  	string(name:'businessGroup')
+  	
   	
   }
   stages {

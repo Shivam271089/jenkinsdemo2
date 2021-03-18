@@ -36,10 +36,6 @@
 				      <username>${anypoint.username}</username>
 				      <password>${anypoint.password}</password>
 				      <applicationName>${appname}</applicationName>
-				      <environment>${env}</environment>
-				      <workers>${workers}</workers>
-				      <region>eu-west-2</region>
-            		  <workerType>${workerType}</workerType>
 			    	</cloudHubDeployment>
 				</configuration>
 			</plugin>

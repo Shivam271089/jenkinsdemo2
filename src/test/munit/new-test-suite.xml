@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="new-test-suite.xml" />
+	<munit:test name="new-test-suite-ssltestFlowTest" doc:id="0fb71bf9-961a-4932-a85d-ebfd5d21ea7a" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to ssltestFlow" doc:id="63310626-6d29-44c8-a12b-ee58c9c58204" name="ssltestFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="6f294011-f4b7-4166-adb4-9684c1af1d9d" actual="#[payload]" expected='#["Hello SSL..!!"]' message="Test passed..!!"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

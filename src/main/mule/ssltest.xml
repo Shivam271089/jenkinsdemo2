@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0fe2a5b9-689c-4f64-8faf-2c8eee4f4141" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<flow name="ssltestFlow" doc:id="f65d36d2-ec64-48fd-9ee3-9717165f2ad7" >
+		<http:listener doc:name="Listener" doc:id="80f2bc3f-093a-480e-b4df-f7d65c093dc5" config-ref="HTTP_Listener_config" path="/testssl"/>
+		<set-payload value="Hello SSL..!!" doc:name="Set Payload" doc:id="a0fbf4e6-cf5c-436e-88cb-eea92270664b" />
+	</flow>
+</mule>

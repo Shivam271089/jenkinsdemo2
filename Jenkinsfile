@@ -26,7 +26,7 @@ pipeline {
       steps {
  
       echo "*************CloudHub Deployment start**************"
-        bat "mvn package deploy -DmuleDeploy -DskipTests -Dmule.version=4.3.0 -Danypoint.username=${params.username} -Danypoint.password=${params.password} -Dappname=${params.appName}"
+        bat "mvn clean package deploy -Dmule.version=4.3.0 -Dusername=${params.username} -Dpassword=${params.password} -Denvironment=${params.environment} -Dappname=${params.appName} -Dworkers=${params.workers} -Dworker.type=${params.workerType} -DmuleDeploy -DskipTests"
       }
       
     }

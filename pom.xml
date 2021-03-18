@@ -33,9 +33,12 @@
 				<configuration>
 					<cloudHubDeployment>
 				      <muleVersion>${mule.version}</muleVersion>
-				      <username>${anypoint.username}</username>
-				      <password>${anypoint.password}</password>
+				      <username>${username}</username>
+				      <password>${password}</password>
 				      <applicationName>${appname}</applicationName>
+				      <workers>${workers}</workers>
+				      <workerType>${worker.type}</workerType>
+				       <environment>${environment}</environment>
 			    	</cloudHubDeployment>
 				</configuration>
 			</plugin>

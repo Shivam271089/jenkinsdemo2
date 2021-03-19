@@ -2,8 +2,6 @@ pipeline {
   agent any
   parameters {
   	string(name:'MAVEN_SETTINGS_XML')
-  	string(name:'username')
-  	string(name:'password')
   	string(name:'appname')
   	string(name:'env')
   	string(name:'workerType')
@@ -12,6 +10,9 @@ pipeline {
   	
   	
   }
+  environment {
+        ANYPOINT_CREDENTIALS = credentials('APCred') 
+      }
   stages {
     stage('Project Build') {
       steps {
@@ -24,9 +25,10 @@ pipeline {
     stage('Deploy CloudHub') {
      
       steps {
- 
+      
+
       echo "*************CloudHub Deployment start**************"
-        bat "mvn clean package deploy -Dmule.version=4.3.0 -Dusername=${params.username} -Dpassword=${params.password} -Denvironment=${params.env} -Dappname=${params.appname} -Dworkers=${params.workers} -Dworker.type=${params.workerType} -DmuleDeploy -DskipTests"
+        bat "mvn clean package deploy -Dmule.version=4.3.0 -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Denvironment=${params.env} -Dappname=${params.appname} -Dworkers=${params.workers} -Dworker.type=${params.workerType} -DmuleDeploy -DskipTests"
       }
       
     }
